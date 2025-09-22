@@ -1,5 +1,5 @@
 terraform {
-  required_version = "= 1.6.6"
+  required_version = "= 1.13.0"
 
   required_providers {
     aws = {
@@ -29,6 +29,7 @@ resource "aws_s3_bucket_versioning" "terraform_state" {
 
     versioning_configuration {
       status = "Enabled"
+      
     }
   
 }

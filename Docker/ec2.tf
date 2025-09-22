@@ -76,6 +76,14 @@ resource "aws_security_group" "docker_sg" {
 
   ingress {
     description = "HTTP access"
+    from_port   = 8081
+    to_port     = 8081
+    protocol    = "tcp"
+    cidr_blocks = [var.my_ip]
+  }
+
+  ingress {
+    description = "HTTP access"
     from_port   = 8085
     to_port     = 8085
     protocol    = "tcp"
@@ -86,6 +94,22 @@ resource "aws_security_group" "docker_sg" {
     description = "HTTP access"
     from_port   = 4747
     to_port     = 4747
+    protocol    = "tcp"
+    cidr_blocks = [var.my_ip]
+  }
+
+  ingress {
+    description = "HTTP access"
+    from_port   = 7070
+    to_port     = 7070
+    protocol    = "tcp"
+    cidr_blocks = [var.my_ip]
+  }
+
+  ingress {
+    description = "HTTP access"
+    from_port   = 9000
+    to_port     = 9000
     protocol    = "tcp"
     cidr_blocks = [var.my_ip]
   }
